@@ -19,7 +19,7 @@ function outNum(elem) {
 outNum('#out1');
 outNum('#out2'); */
 
-
+/*
 document.addEventListener("DOMContentLoaded", function() {
     var progressBars = document.querySelectorAll("progress");
 
@@ -27,22 +27,60 @@ document.addEventListener("DOMContentLoaded", function() {
         var percentParagraph = progressBar.parentElement.previousElementSibling.querySelector(".item-description-percent-paragraph");
         var targetValue = parseInt(progressBar.getAttribute("value"));
 
-        // Set the initial value of each progress bar to 0
         progressBar.value = 0;
 
-        // Function to animate each progress bar
         function animateProgressBar() {
             var currentValue = progressBar.value;
-            var step = 1; // Change this value to adjust animation speed
-
+            var step = 1; 
             if (currentValue < targetValue) {
                 progressBar.value = Math.min(currentValue + step, targetValue);
                 percentParagraph.textContent = progressBar.value + "%";
                 requestAnimationFrame(animateProgressBar);
             }
         }
-
-        // Call the animateProgressBar function after a brief delay to allow DOM rendering
         setTimeout(animateProgressBar, 100);
+    });
+});
+*/
+document.addEventListener("DOMContentLoaded", function() {
+    // Функция для анимации прогресс-бара
+    function animateProgressBar(progressBar, percentParagraph) {
+        var targetValue = parseInt(progressBar.getAttribute("value"));
+        progressBar.value = 0;
+
+        function step() {
+            var currentValue = progressBar.value;
+            var stepSize = 1; 
+            if (currentValue < targetValue) {
+                progressBar.value = Math.min(currentValue + stepSize, targetValue);
+                percentParagraph.textContent = progressBar.value + "%";
+                requestAnimationFrame(step);
+            }
+        }
+
+        setTimeout(step, 100);
+    }
+
+    // Функция для обработки элементов
+    function handleIntersection(entries, observer) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var progressBar = entry.target;
+                var percentParagraph = progressBar.parentElement.previousElementSibling.querySelector(".item-description-percent-paragraph");
+                animateProgressBar(progressBar, percentParagraph);
+                observer.unobserve(progressBar); // Остановить отслеживание после анимации
+            }
+        });
+    }
+
+    // Создание наблюдателя
+    var observer = new IntersectionObserver(handleIntersection, {
+        threshold: 1.0 // Элемент должен быть полностью видимым для запуска анимации
+    });
+
+    // Поиск всех прогресс-баров и добавление их в наблюдатель
+    var progressBars = document.querySelectorAll("progress");
+    progressBars.forEach(function(progressBar) {
+        observer.observe(progressBar);
     });
 });

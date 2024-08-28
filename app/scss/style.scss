@@ -1,5 +1,6 @@
 @import "reset.scss"; 
 
+
 *,*:before,*:after {
     padding: 0;
     margin: 0;
@@ -933,72 +934,132 @@ header {
     max-width: 1360px;
     max-height: 675px;
     display: flex;
-    justify-content: space-between;
-    margin-left: 20px;
-    margin-right: 20px;
-    .team_body-presonal_card {
-        max-width: 434px;
-        max-height: 675px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+    .swiper-wrapper-container {
         display: flex;
-        flex-direction: column;
         align-items: center;
-        .personal_photo {
-            margin-bottom: 20px;
-            max-height: 574px;
+        position: relative;
+        width: 100%;
+        .swiper-container-3 {
+            flex: 1; 
             position: relative;
-            .personal_photo > img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-            .team_body-overlay-block {
-                display: none;
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 217px;
-                height: 66px;
-                .team_body-social-links {
-                    max-width: 217px;
-                    max-height: 66px;
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .team_body-presonal_card {
+                    max-width: 434px;
+                    max-height: 675px;
                     display: flex;
-                    padding-top: 25px;
-                    padding-bottom: 20px;
-                    background-color: $white-color;
-                    .social_link:first-child {
-                        margin-left: 36px;
+                    flex-direction: column;
+                    align-items: center;
+                    .personal_photo {
+                        margin-bottom: 20px;
+                        max-height: 574px;
+                        position: relative;
+                        .personal_photo > img {
+                            width: 100%;
+                            height: auto;
+                            display: block;
+                        }
+                        .team_body-overlay-block {
+                            display: none;
+                            position: absolute;
+                            bottom: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 217px;
+                            height: 66px;
+                            .team_body-social-links {
+                                max-width: 217px;
+                                max-height: 66px;
+                                display: flex;
+                                padding-top: 25px;
+                                padding-bottom: 20px;
+                                background-color: $white-color;
+                                .social_link:first-child {
+                                    margin-left: 36px;
+                                }
+                                .social_link:not(:last-child) {
+                                    margin-right: 20px;
+                                }
+                            }
+                        }
                     }
-                    .social_link:not(:last-child) {
-                        margin-right: 20px;
+                    .personal_photo:hover {
+                        .team_body-overlay-block {
+                            display: block;
+                        }
+                    }
+                    .personal_data {
+                        max-height: 71px;
+                        max-width: 433px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .presonal_data-name {
+                            font-family: $font-cormoran;
+                            font-size: 30px;
+                            line-height: 39px;
+                            color: #161d27;
+                        }
+                        .presonal_data-specialization {
+                            font-family: $font-outfit;
+                            font-size: 20px;
+                            line-height: 32px;
+                            color: $gold_color;
+                        }
                     }
                 }
             }
         }
-        .personal_photo:hover {
-            .team_body-overlay-block {
-                display: block;
-            }
-        }
-        .personal_data {
-            max-height: 71px;
-            max-width: 433px;
+        .swiper-button-prev-3, 
+        .swiper-button-next-3 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            color:  #fff;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            .presonal_data-name {
-                font-family: $font-cormoran;
-                font-size: 30px;
-                line-height: 39px;
-                color: #161d27;
-            }
-            .presonal_data-specialization {
-                font-family: $font-outfit;
-                font-size: 20px;
-                line-height: 32px;
-                color: $gold_color;
-            }
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
         }
+          
+        .swiper-button-prev-3 {
+            left: -30px; /* Отступ слева */
+        }
+          
+        .swiper-button-next-3 {
+            right: -30px; /* Отступ справа */
+        }
+      }
+      .swiper-pagination-3 {
+        position: absolute;
+        bottom: -30px; 
+        width: 100%;
+        text-align: center;
+        z-index: 10; 
+    }
+    .swiper-pagination-bullet {
+        width: 12px; 
+        height: 12px;
+        background-color: #D1B06B; 
+        border-radius: 50%; 
+        opacity: 0.6; 
+        margin: 0 4px; 
+        display: inline-block; 
+    }
+    .swiper-pagination-bullet-active {
+        background-color: #1F2732;
+        opacity: 1; 
     }
 }
 

@@ -942,75 +942,84 @@ header {
         display: flex;
         align-items: center;
         position: relative;
-        width: 100%;
+        width: 1360px;
         .swiper-container-3 {
             flex: 1; 
             position: relative;
-            .swiper-slide {
+            width: 1360px;
+            height: 675px;
+            overflow: hidden;
+            .swiper-wrapper {
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                .team_body-presonal_card {
-                    max-width: 434px;
-                    max-height: 675px;
+                gap: 30px;
+                .swiper-slide {
                     display: flex;
-                    flex-direction: column;
+                    justify-content: center;
                     align-items: center;
-                    .personal_photo {
-                        margin-bottom: 20px;
-                        max-height: 574px;
-                        position: relative;
-                        .personal_photo > img {
-                            width: 100%;
-                            height: auto;
-                            display: block;
-                        }
-                        .team_body-overlay-block {
-                            display: none;
-                            position: absolute;
-                            bottom: 0;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            width: 217px;
-                            height: 66px;
-                            .team_body-social-links {
-                                max-width: 217px;
-                                max-height: 66px;
-                                display: flex;
-                                padding-top: 25px;
-                                padding-bottom: 20px;
-                                background-color: $white-color;
-                                .social_link:first-child {
-                                    margin-left: 36px;
-                                }
-                                .social_link:not(:last-child) {
-                                    margin-right: 20px;
-                                }
-                            }
-                        }
-                    }
-                    .personal_photo:hover {
-                        .team_body-overlay-block {
-                            display: block;
-                        }
-                    }
-                    .personal_data {
-                        max-height: 71px;
-                        max-width: 433px;
+                    flex: 0 0 calc((100% - 60px) / 3);
+                    max-height: 675px;
+                    .team_body-presonal_card {
+                        max-width: 434px;
+                        max-height: 675px;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        .presonal_data-name {
-                            font-family: $font-cormoran;
-                            font-size: 30px;
-                            line-height: 39px;
-                            color: #161d27;
+                        .personal_photo {
+                            margin-bottom: 20px;
+                            max-height: 574px;
+                            position: relative;
+                            .personal_photo > img {
+                                width: 100%;
+                                height: auto;
+                                display: block;
+                            }
+                            .team_body-overlay-block {
+                                display: none;
+                                position: absolute;
+                                bottom: 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                width: 217px;
+                                height: 66px;
+                                .team_body-social-links {
+                                    max-width: 217px;
+                                    max-height: 66px;
+                                    display: flex;
+                                    padding-top: 25px;
+                                    padding-bottom: 20px;
+                                    background-color: $white-color;
+                                    .social_link:first-child {
+                                        margin-left: 36px;
+                                    }
+                                    .social_link:not(:last-child) {
+                                        margin-right: 20px;
+                                    }
+                                }
+                            }
                         }
-                        .presonal_data-specialization {
-                            font-family: $font-outfit;
-                            font-size: 20px;
-                            line-height: 32px;
-                            color: $gold_color;
+                        .personal_photo:hover {
+                            .team_body-overlay-block {
+                                display: block;
+                            }
+                        }
+                        .personal_data {
+                            max-height: 71px;
+                            max-width: 433px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            .presonal_data-name {
+                                font-family: $font-cormoran;
+                                font-size: 30px;
+                                line-height: 39px;
+                                color: #161d27;
+                            }
+                            .presonal_data-specialization {
+                                font-family: $font-outfit;
+                                font-size: 20px;
+                                line-height: 32px;
+                                color: $gold_color;
+                            }
                         }
                     }
                 }

@@ -825,74 +825,140 @@ header {
     max-width: 1360px;
     max-height: 600px;
     display: flex;
-}
-.feedback_body-item {
-    max-width: 332.5px;
-    max-height: 600px;
-    display: flex;
     flex-direction: column;
-    padding-top: 40px;
-    padding-left: 10px;
-    padding-right: 10px;
-    .person_card {
-       display: flex;
-       margin-bottom: 20px;
-       .personal_card-photo {
-        max-width: 84px;
-        max-height: 84px;
-       }
-        .personal_card-data {
-            display: flex;
-            flex-direction: column;
-            margin-top: 6.5px;
-            margin-bottom: 6.5px;
-            padding-left: 22px;
-            .personal_card-data-name {
-                font-family: $font-cormoran;
-                font-size: 30px;
-                line-height: 39px;
-                color: $white-color;
-            }
-            .personal_card-data-profession {
-                font-family: $font-outfit;
-                font-size: 20px;
-                line-height: 32px;
-                color: $light-gray;
-            }
-        }
-    }
-    .review_textarea {
-        background-color: #2e3947;
-        max-width: 313px;
+    .swiper-wrapper-container {
         display: flex;
-        flex-direction: column;
-        border-radius: 1px;
-        .review_textarea-svg{
-            margin-bottom: 33px;
+        align-items: center;
+        position: relative;
+        width: 1360px;
+        .swiper-container-2 {
+            flex: 1; 
+            position: relative;
+            width: 1360px;
+            height: 600px;
+            overflow: hidden;
+            .swiper-wrapper {
+                display: flex;
+                .swiper-slide {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex: 0 0 calc((100% - 30px) / 4);
+                    max-height: 600px;
+                    .feedback_body-item {
+                        max-width: 332.5px;
+                        max-height: 600px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        padding-top: 40px;
+                        padding-left: 10px;
+                        padding-right: 10px;
+                        .person_card {
+                           display: flex;
+                           margin-bottom: 20px;
+                           .personal_card-photo {
+                            max-width: 84px;
+                            max-height: 84px;
+                           }
+                            .personal_card-data {
+                                display: flex;
+                                flex-direction: column;
+                                margin-top: 6.5px;
+                                margin-bottom: 6.5px;
+                                padding-left: 22px;
+                                .personal_card-data-name {
+                                    font-family: $font-cormoran;
+                                    font-size: 30px;
+                                    line-height: 39px;
+                                    color: $white-color;
+                                }
+                                .personal_card-data-profession {
+                                    font-family: $font-outfit;
+                                    font-size: 20px;
+                                    line-height: 32px;
+                                    color: $light-gray;
+                                }
+                            }
+                        }
+                        .review_textarea {
+                            background-color: #2e3947;
+                            max-width: 313px;
+                            display: flex;
+                            flex-direction: column;
+                            border-radius: 1px;
+                            .review_textarea-svg{
+                                margin-bottom: 33px;
+                            }
+                            .review_textarea-message {
+                                font-family: $font-outfit;
+                                font-size: 20px;
+                                line-height: 32px;
+                                color: $light-gray;
+                            }
+                        }
+                    }
+                    .feedback_body-item:not(:last-child) {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .swiper-slide:nth-child(odd) .feedback_body-item {
+                flex-direction: column-reverse; 
+                .review_textarea {
+                    margin-bottom: 20px;
+                    border-bottom-left-radius: 40px 40px;
+                    padding: 51px 51px 57px 45px;
+                }
+            }
+            .swiper-slide:nth-child(even) .feedback_body-item {
+                .review_textarea {
+                    border-top-left-radius: 40px 40px;
+                    padding: 76px 47px 57px 45px;
+                }
+            }
         }
-        .review_textarea-message {
-            font-family: $font-outfit;
-            font-size: 20px;
-            line-height: 32px;
-            color: $light-gray;
+        .swiper-button-prev-2, 
+        .swiper-button-next-2 {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            color:  #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+          
+        .swiper-button-prev-2 {
+            left: -30px;
+        }
+          
+        .swiper-button-next-2 {
+            right: -30px; 
         }
     }
-}
-.feedback_body-item:not(:last-child) {
-    margin-right: 10px;
-}
-.feedback_body-item:nth-child(odd) {
-    flex-direction: column-reverse;
-    .review_textarea {
-        margin-bottom: 20px;
-        border-bottom-left-radius: 40px 40px;
-        padding: 51px 51px 57px 45px;
+    .swiper-pagination-2 {
+        position: relative;
+        bottom: -30px; 
+        width: 100%;
+        text-align: center;
+        z-index: 10; 
     }
-}
-.feedback_body-item:nth-child(even) {
-    .review_textarea {
-        border-top-left-radius: 40px 40px;
-        padding: 76px 47px 57px 45px;
+    .swiper-pagination-bullet {
+        width: 12px; 
+        height: 12px;
+        background-color: $gold_color; 
+        border-radius: 50%; 
+        opacity: 0.6; 
+        margin: 0 4px; 
+        display: inline-block; 
+    }
+    .swiper-pagination-bullet-active {
+        background-color: $white-color;
+        opacity: 1; 
     }
 }
 
@@ -951,7 +1017,6 @@ header {
             overflow: hidden;
             .swiper-wrapper {
                 display: flex;
-              
                 .swiper-slide {
                     display: flex;
                     justify-content: center;
@@ -1046,8 +1111,8 @@ header {
         .swiper-button-next-3 {
             right: -30px; 
         }
-      }
-      .swiper-pagination-3 {
+    }
+    .swiper-pagination-3 {
         position: relative;
         bottom: -30px; 
         width: 100%;

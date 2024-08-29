@@ -94,6 +94,37 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    var swiper2 = new Swiper('.swiper-container-2', {
+      slidesPerView: 1, 
+      slidesPerGroup: 1,
+      centeredSlides: false,  
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next-2',
+        prevEl: '.swiper-button-prev-2',
+      },
+      pagination: {
+        el: '.swiper-pagination-2',
+        clickable: true,
+      },
+      observer: true, 
+      observeParents: true,
+      loop: false,
+      breakpoints: {
+        1200: {
+          slidesPerView: 4,
+        },
+        768: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  });
+  
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
   var swiper3 = new Swiper('.swiper-container-3', {

@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener('DOMContentLoaded', function () {
   var swiper3 = new Swiper('.swiper-container-3', {
-    slidesPerView: 3, 
+    slidesPerView: 1, 
     slidesPerGroup: 1,
     centeredSlides: false,  
     navigation: {
@@ -113,10 +113,10 @@ document.addEventListener('DOMContentLoaded', function () {
     loop: false,
     breakpoints: {
       1200: {
-        slidesPerView: 2,
+        slidesPerView: 3,
       },
       768: {
-        slidesPerView: 1,
+        slidesPerView: 2,
       }
     }
   });

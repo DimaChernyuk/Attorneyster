@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerView: 1, 
     slidesPerGroup: 1,
     centeredSlides: false,  
+    spaceBetween: 30,
     navigation: {
       nextEl: '.swiper-button-next-3',
       prevEl: '.swiper-button-prev-3',

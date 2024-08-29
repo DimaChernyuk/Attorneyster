@@ -91,8 +91,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
+document.addEventListener('DOMContentLoaded', function () {
+    var swiper1 = new Swiper('.swiper-container-1', {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      centeredSlides: false,
+      loop: true,  
+      autoplay: {
+        delay: 2000, 
+        disableOnInteraction: false, 
+      },
+      observer: true,
+      observeParents: true,
+      breakpoints: {
+        1200: {
+          slidesPerView: 4,
+        },
+        768: {
+          slidesPerView: 3,
+        }
+      }
+    });
+  });
 
 document.addEventListener('DOMContentLoaded', function () {
     var swiper2 = new Swiper('.swiper-container-2', {

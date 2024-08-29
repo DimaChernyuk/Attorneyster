@@ -634,6 +634,28 @@ header {
         margin-left: 20px;
         margin-right: 20px;
         padding-top: 60px;
+        max-width: 1360px;
+        max-height: 220px;
+        .swiper-container-1 {
+            width: 100%;
+            overflow: hidden;
+            .swiper-wrapper {
+                display: flex;
+                .swiper-slide {
+                    flex-shrink: 0;
+                    width: auto; 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .partners_body-item {
+                        display: flex;
+                        flex-direction: column; 
+                        justify-content: flex-end; 
+                        align-items: center; 
+                    }
+                }
+            }
+        }
     }
 }
 

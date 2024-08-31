@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Функция для анимации прогресс-бара
     function animateProgressBar(progressBar, percentParagraph) {
         var targetValue = parseInt(progressBar.getAttribute("value"));
         progressBar.value = 0;
@@ -114,6 +113,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+
+
+  
 document.addEventListener('DOMContentLoaded', function () {
     var swiper2 = new Swiper('.swiper-container-2', {
       slidesPerView: 1, 

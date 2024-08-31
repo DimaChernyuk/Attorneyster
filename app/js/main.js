@@ -175,3 +175,99 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.querySelector('.appointment_btn').addEventListener('click', function(event) {
+  event.preventDefault(); 
+  
+  let isValid = true;
+
+  document.querySelectorAll('input').forEach(function(input) {
+      input.classList.remove('input-error');
+      input.value = input.value.replace(/.*(Full name is required|Email is required|Invalid email format|Invalid phone number format)/, '');
+  });
+
+  const fullName = document.getElementById('full_name');
+  if (fullName.value.trim() === '') {
+      showError(fullName, 'Full name is required');
+      isValid = false;
+  }
+
+  const email = document.getElementById('email_address');
+  if (email.value.trim() === '') {
+      showError(email, 'Email is required');
+      isValid = false;
+  } else if (!validateEmail(email.value)) {
+      showError(email, 'Invalid email format');
+      isValid = false;
+  }
+
+  const phoneNumber = document.getElementById('phone_number');
+  if (phoneNumber.value.trim() !== '' && !validatePhoneNumber(phoneNumber.value)) {
+      showError(phoneNumber, 'Invalid phone number format');
+      isValid = false;
+  }
+
+  if (isValid) {
+      showSuccessMessage();
+  }
+});
+
+function showError(inputElement, message) {
+  inputElement.value = message;
+  inputElement.classList.add('input-error');
+
+  inputElement.addEventListener('focus', function() {
+      inputElement.value = '';
+      inputElement.classList.remove('input-error');
+  }, { once: true }); 
+}
+
+function validateEmail(email) {
+  const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function validatePhoneNumber(phone) {
+  const re = /^\+?[0-9]{10,20}$/;
+  return re.test(String(phone));
+}
+
+function showSuccessMessage() {
+  const successMessage = document.createElement('div');
+  successMessage.className = 'success-message';
+  successMessage.innerHTML = `
+      <div class="success-popup">
+          <svg width="40" height="40" fill="green" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M20.29 4.29a1 1 0 00-1.41 0l-9.29 9.29-4.29-4.29a1 1 0 00-1.41 1.41l5 5a1 1 0 001.41 0l10-10a1 1 0 000-1.41z"/>
+          </svg>
+          <p>Request sent successfully</p>
+      </div>
+  `;
+  document.body.appendChild(successMessage);
+  
+  setTimeout(function() {
+      successMessage.remove();
+  }, 3000);
+}
+
+

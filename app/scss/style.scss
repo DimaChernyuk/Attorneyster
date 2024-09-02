@@ -58,6 +58,13 @@ $gold_color:  #D1B06B;
 $gray-color: #1F2732;
 $light-gray: #D7D7D7;
 
+.txt-df {
+    font-size: 20px;
+    line-height: 32px;
+    font-family: $font-outfit;
+    letter-spacing: 0.4px;
+    color: $light-gray;
+}
 
 
 
@@ -68,7 +75,7 @@ header {
     background-size: cover;
     .container {
         background-color: rgba(31, 39, 50, 0.81);
-        padding: 40px;
+        padding: 40px 40px 0 40px;
     }
 }
 .header_nav {
@@ -269,10 +276,6 @@ header {
         margin-bottom: 43px;
     }
     .description_accost_block {
-        color: $light-gray;
-        font-family: $font-outfit;
-        font-size: 20px;
-        line-height: 32px;
         margin-right: 6px;
         margin-bottom: 32px;
     }
@@ -364,12 +367,6 @@ header {
 .explore_header-right-block {
     margin: 43px 12px 73px 16px;
     max-width: 660px;
-    .explore_header-description {
-        font-family: $font-outfit;
-        color: $light-gray;
-        font-size: 20px;
-        line-height: 32px;
-    }
 }
 .explore_body {
     margin-left: 10px;
@@ -382,20 +379,18 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
-    padding-bottom: 0px 15px 30px;
 }
 .case_item {
     background-color:$gray-color;
     width: 31%;
     display: flex;
     flex-direction: column;
+    padding: 50px 50px 70px 50px;
     .case_item-top {
         display: flex;
         flex-direction: column;
-        margin-top: 55px;
-        margin-right: 50px;
-        margin-left: 50px;
         padding-bottom: 27px;
+        border-bottom: 1px solid #4E555F;
         .case_item-header {
             font-family: $font-cormoran;
             color: $white-color;
@@ -404,36 +399,25 @@ header {
             margin-bottom: 8px;
         }
         .case_item-description {
-            font-family: $font-outfit;
-            color: $light-gray;
-            font-size: 20px;
-            line-height: 32px;
             max-width: 330px;
         }
-    }
-    .case_item-line {
-        background-color: #4E555F;
-        height: 1px;
-        width: 75%;
-        margin: auto;
     }
     .case_item-bottom {
         display: flex;
         justify-content: space-between;
-        margin: 37px 50px 70px;
-        max-height: 78px;
+        align-items: center;
+        padding-top: 37px;
+        a {
+            display: block;
+        }
         .case_item-svg {
             padding-top: 13px;
             padding-bottom: 13px;
         }
         .case_item-link {
-            font-family: $font-outfit;
-            color: $white-color;
-            font-size: 20px;
-            line-height: 32px;
             background-color: #161D27;
             padding: 13px 42px;
-            margin-top: 20px;
+            height: 58px;
         }
         .case_item-link:hover {
             background-color: $gold_color;
@@ -679,18 +663,20 @@ header {
 .history_body {
     min-width: 1240px;
     max-height: 900px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
 }
 .history_body-left {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .history_body-left-top {
         max-width: 418px;
         max-height: 172px;
-        margin-top: 10px;
-        margin-bottom: 50px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 50px;
         .history_body-left-top-header {
             font-family: $font-cormoran;
             font-size: 45px;
@@ -721,10 +707,6 @@ header {
                 max-height: 26px;
             }
             .left-bottom-items-description {
-                font-family: $font-outfit;
-                font-size: 20px;
-                line-height: 32px;
-                color: $light-gray;
                 margin-right: 4px;
                 margin-bottom: 3px;
             }
@@ -739,11 +721,12 @@ header {
     width: 264px;
 }
 .history_body-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     .history_body-right-top {
         max-width: 383px;
         max-height: 372px;
-        margin-top: 10px;
-        margin-bottom: 50px;
         display: flex;
         flex-direction: column;
         .history_body-right-top-header {
@@ -757,10 +740,6 @@ header {
             margin: 11px 288px 43px 0px;
         }
         .history_body-right-top-description {
-            font-family: $font-outfit;
-            font-size: 20px;
-            line-height: 32px;
-            color: $light-gray;
             max-width: 382px;
             margin-right: 1px;
             margin-bottom: 3px;
@@ -801,9 +780,11 @@ header {
                 }
             }
             .right-bottom-statistic-item:not(:last-child) {
-                margin-bottom: 40px;
+                margin-bottom: 38px;
             }
         } 
+    } 
+    .right-bottom-button {
         button {
             color: $gray-color;
             font-size: 22px;
@@ -811,7 +792,6 @@ header {
             font-family: $font-outfit;
             padding: 25px 71px;
             background-color: $gold_color;
-            margin: 50px 81px 35px 0px;
         }
         button:hover {
             transition: all 0.2s linear;
@@ -881,8 +861,8 @@ header {
                            display: flex;
                            margin-bottom: 20px;
                            .personal_card-photo {
-                            max-width: 84px;
-                            max-height: 84px;
+                            width: 84px;
+                            height: 84px;
                            }
                             .personal_card-data {
                                 display: flex;
@@ -896,12 +876,6 @@ header {
                                     line-height: 39px;
                                     color: $white-color;
                                 }
-                                .personal_card-data-profession {
-                                    font-family: $font-outfit;
-                                    font-size: 20px;
-                                    line-height: 32px;
-                                    color: $light-gray;
-                                }
                             }
                         }
                         .review_textarea {
@@ -912,12 +886,6 @@ header {
                             border-radius: 1px;
                             .review_textarea-svg{
                                 margin-bottom: 33px;
-                            }
-                            .review_textarea-message {
-                                font-family: $font-outfit;
-                                font-size: 20px;
-                                line-height: 32px;
-                                color: $light-gray;
                             }
                         }
                     }
@@ -1199,10 +1167,6 @@ header {
             margin-bottom: 43px;
         }
         .left-block_paragraph {
-            font-family: $font-outfit;
-            font-size: 20px;
-            line-height: 32px;
-            color: $light-gray;
             margin-right: 2px;
             margin-bottom: 3px;
         }
@@ -1546,10 +1510,6 @@ header {
             max-height: 64px;
             margin-right: 9px;
             margin-bottom: 20px;
-            font-family: $font-outfit;
-            font-size: 20px;
-            line-height: 32px;
-            color: $light-gray;
         }
         .right_block-link {
             max-width: 109px;
@@ -1645,10 +1605,6 @@ header {
             max-height: 96px;
             margin-right: 19px;
             margin-bottom: 20px;
-            font-family: $font-outfit;
-            font-size: 20px;
-            line-height: 32px;
-            color: $light-gray;
         }
         .case_body-link {
             max-width: 109px;
@@ -1723,10 +1679,6 @@ header {
     .copyright_information,
     .copyright_desigren_info,
     .copyright_developer_info {
-        font-family: $font-outfit;
-        font-size: 20px;
-        line-height: 32px;
-        color: $light-gray;
         margin-right: 10px;
         a {
             font-size: 22px;
@@ -1794,10 +1746,7 @@ header {
         flex-direction: column;
         max-height: 260px;
         .footer-nav-body_item {
-            font-family: $font-outfit;
-            font-size: 20px;
-            line-height: 32px;
-            color: $light-gray;
+            
             a:hover,
             a:active {
                 color: $white-color;

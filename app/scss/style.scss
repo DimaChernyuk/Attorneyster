@@ -62,10 +62,37 @@ $light-gray: #D7D7D7;
     font-size: 20px;
     line-height: 32px;
     font-family: $font-outfit;
-    letter-spacing: 0.4px;
     color: $light-gray;
 }
-
+h1 {
+    font-size: 65px;
+    line-height: 120%;
+    font-family: $font-cormoran;
+    color: $white-color;
+}
+h2 {
+    font-family: $font-cormoran;
+    font-size: 50px;
+    line-height: 120%;
+}
+h3 {
+    color: $white-color;
+    font-family: $font-cormoran;
+    font-size: 45px;
+    line-height: 125%;
+}
+h4 {
+    font-family: $font-cormoran;
+    color: $white-color;
+    font-size: 35px;
+    line-height: 160%;
+}
+h5 {
+    font-family: $font-cormoran;
+    font-size: 30px;
+    line-height: 130%;
+    color: $white-color;
+}
 
 
 
@@ -119,10 +146,12 @@ header {
 .header_nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    height: 132px;
+    border-top: 1px solid #5d6674;
+    border-bottom: 1px solid #5d6674;
 }
 .header_menu {
-    margin-top: 26px;
-    margin-bottom: 29px;
     .header_list {
         display: flex;
         a {
@@ -146,10 +175,6 @@ header {
         }
     }
 }
-.header_contacts {
-    margin-top: 32.5px;
-    margin-bottom: 35.5px;
-}
 .contacts {
     display: flex;
     a:active,
@@ -168,22 +193,17 @@ header {
         display: flex;
         flex-direction: column;
         margin-left: 12px;
-        h2 {
-            color: $gold_color;
-            font-size: 18px;
-            line-height: 29px;
-        }
-        p {
-            color: $white-color;
-            font-size: 22px;
-            line-height: 26px;
-        }
     }
-}
-.gradient {
-    height: 1px;
-    background: #4E555F;
-    margin: auto 20px ;
+    .info_contact p:first-child {
+        color: $gold_color;
+        font-size: 18px;
+        line-height: 29px;
+    }
+    .info_contact p:last-child {
+        color: $white-color;
+        font-size: 22px;
+        line-height: 26px;
+    }
 }
 .header_info {
     margin: 20px 40px auto;
@@ -202,10 +222,6 @@ header {
     }
     .main_header {
         max-width: 669px;
-        font-size: 65px;
-        line-height: 78px;
-        font-family: $font-cormoran;
-        color: $white-color;
         margin-bottom: 21px;
     }
     .header_info-description {
@@ -264,10 +280,6 @@ header {
     display: flex;
     flex-direction: column;
     .header_accost_block {
-        color: $white-color;
-        font-family: $font-cormoran;
-        font-size: 45px;
-        line-height: 58px;
         text-transform: capitalize;
         margin-bottom: 11px;
         max-width: 549px;
@@ -355,10 +367,6 @@ header {
     display: flex;
     flex-direction: column;
     .explore_main-header {
-        font-family: $font-cormoran;
-        color: $white-color;
-        font-size: 45px;
-        line-height: 58px;
         text-transform: capitalize;
         max-width: 356px;
         margin-bottom: 11px;
@@ -392,10 +400,6 @@ header {
         padding-bottom: 27px;
         border-bottom: 1px solid #4E555F;
         .case_item-header {
-            font-family: $font-cormoran;
-            color: $white-color;
-            font-size: 35px;
-            line-height: 56px;
             margin-bottom: 8px;
         }
         .case_item-description {
@@ -450,6 +454,7 @@ header {
     flex-direction: column;
     max-width: 1400px;
     margin: 115px 20px 0px 20px;
+    border-bottom: 1px solid $light-gray;
 }
 .causes_header {
     max-width: 1360px;
@@ -458,9 +463,6 @@ header {
     flex-direction: column;
     align-items: center;
     .causes_main-header {
-        font-family: $font-cormoran;
-        font-size: 45px;
-        line-height: 58px;
         text-transform: capitalize;
         text-align: center;
         color: #161D27;
@@ -557,9 +559,8 @@ header {
 }
 
 .causes_body-statistic-block3 {
-    max-width: 433px;
-    max-height: 180px; 
-    width: 100%;
+    width: 433px;
+    height: 180px; 
     background-image: url(../images/Causes/causes_justice.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -577,13 +578,6 @@ header {
             line-height: 26px;
         }
     }
-}
-.causes_rectangle {
-    max-width: 1360px;
-    height: 1px;
-    background-color: $light-gray;
-    margin-left: 40px;
-    margin-right: 40px;
 }
 
 
@@ -603,9 +597,6 @@ header {
         display: flex;
         justify-content: center;
         .partners_main-header {
-            font-family: $font-cormoran;
-            font-size: 50px;
-            line-height: 60px;
             color: #161D27;
             text-transform: capitalize;
             margin: 10px 40px;
@@ -678,10 +669,6 @@ header {
         flex-direction: column;
         margin-bottom: 50px;
         .history_body-left-top-header {
-            font-family: $font-cormoran;
-            font-size: 45px;
-            line-height: 58.5px;
-            color: $white-color;
             text-align: left;
         }
         .history_body-left-top-svg {
@@ -706,10 +693,6 @@ header {
                 max-width: 384px;
                 max-height: 26px;
             }
-            .left-bottom-items-description {
-                margin-right: 4px;
-                margin-bottom: 3px;
-            }
         }
     }
 }
@@ -730,10 +713,6 @@ header {
         display: flex;
         flex-direction: column;
         .history_body-right-top-header {
-            font-family: $font-cormoran;
-            font-size: 45px;
-            line-height: 58.5px;
-            color: $white-color;
             text-align: left;
         }
         .history_body-right-top-svg {
@@ -741,8 +720,6 @@ header {
         }
         .history_body-right-top-description {
             max-width: 382px;
-            margin-right: 1px;
-            margin-bottom: 3px;
         }
     }
     .history_body-right-bottom {
@@ -817,10 +794,6 @@ header {
     align-items: center;
     margin-bottom: 60px;
     .feedback_header-main {
-        font-family: $font-cormoran;
-        font-size: 45px;
-        line-height: 54px;
-        color: $white-color;
         margin-bottom: 11px;
     }
 }
@@ -979,9 +952,6 @@ header {
     align-items: center;
     .team-header-main {
         max-width: 692px;
-        font-family: $font-cormoran;
-        font-size: 45px;
-        line-height: 54px;
         color: #161d27;
         text-align: center;
         margin-bottom: 11px;
@@ -1154,10 +1124,6 @@ header {
         max-height: 366px;
         margin-bottom: 40px;
         .left-block_header {
-            font-family: $font-cormoran;
-            font-size: 45px;
-            line-height: 58.5px;
-            color: $white-color;
             margin-bottom: 9px;
             max-width: 577px;
             max-height: 176px;
@@ -1165,10 +1131,6 @@ header {
         }
         .left-block_svg {
             margin-bottom: 43px;
-        }
-        .left-block_paragraph {
-            margin-right: 2px;
-            margin-bottom: 3px;
         }
     }
     .left-block_button > button {
@@ -1311,10 +1273,12 @@ header {
             line-height: 21px;
             color: $white-color;
             cursor: text;
+            border-bottom: 1px solid #5d6674;
         }
-    }
-    .appointment_rectangle {
-        max-width: 556px;
+        input:hover,
+        input:focus {
+            border-bottom: 1px solid $gold_color;
+        }
     }
 }
 .appointment_data-child:nth-child(-n+2) {
@@ -1345,7 +1309,7 @@ header {
             line-height: 21px;
             color: $white-color;
             resize: none;
-            border: 1px solid transparent; 
+            border: 1px solid #5d6674; 
             border-radius: 5px;
             padding: 10px;
             transition: border-color 0.3s; 
@@ -1356,12 +1320,6 @@ header {
             border-radius: 5px;
         }
     }
-}
-.appointment_rectangle {
-    background-color: #3B434E;
-    height: 1px;
-    max-width: 1160px;
-    transition: background-color 0.3s;
 }
 .appointment_data-child-input:hover ~ .appointment_rectangle {
     background-color: $gold_color; 
@@ -1396,11 +1354,13 @@ header {
     line-height: 21px;
     color: $white-color;
 }
-.input-error {
-    border: 1px solid #cc3336;
-    border-radius: 5px;
-    padding-left: 5px;
-    color: #cc3336;
+.appointment_data-child{
+    .appointment_data-child-input {
+        .input-error {
+            border-bottom: 1px solid #cc3336;
+            color: #cc3336;
+        }
+    }
 }
 .success-popup {
     position: fixed;
@@ -1435,10 +1395,12 @@ header {
 .recent_blogs-head {
     margin: auto;
     max-width: 1400px;
-    max-height: 734px;
+    max-height: 834px;
     display: flex;
     flex-direction: column;
     color: $white-color;
+    padding-bottom: 100px;
+    border-bottom: 1px solid #4E555F;
 }
 .recent_blogs-header {
     margin: 10px 20px 70px;
@@ -1448,20 +1410,14 @@ header {
     flex-direction: column;
     align-items: center;
     .recent_blogs-header-main {
-        font-family: $font-cormoran;
-        font-size: 45px;
-        line-height: 54px;
-        color: $white-color;
         margin-top: 9px;
         margin-bottom: 11px;
     }
 }
 .recent_blog-head-content {
-    max-width: 1360px;
     max-height: 546px;
-    margin-left: 20px;
-    margin-right: 20px;
     display: flex;
+    justify-content: space-between;
     .left_block {
         max-width: 655px;
         max-height: 546px;
@@ -1476,14 +1432,13 @@ header {
         flex-direction: column;
         .right_block-top_info {
             display: flex;
-            max-width: 655px;
-            min-height: 56px;
             margin-top: 25px;
             padding-bottom: 23px;
             color: $gold_color;
             font-family: $font-outfit;
             font-size: 20px;
             line-height: 32px;
+            border-bottom: 1px solid #4E555F;
             .right_block_info-subject {
                 margin-right: 20px;
             }
@@ -1491,19 +1446,10 @@ header {
                 margin-left: 21px;
             }
         }
-        .recent_blogs-head-rectangle {
-            height: 1px;
-            width: 100%;
-            background-color: #4E555F;
-        }
         .right_block-header {
             max-width: 513px;
             max-height: 117px;
             margin: 25px 142px 21px 0px;
-            font-family: $font-cormoran;
-            font-size: 45px;
-            line-height: 58.5px;
-            color: $white-color;
         }
         .right_block-description {
             max-width: 646px;
@@ -1512,10 +1458,7 @@ header {
             margin-bottom: 20px;
         }
         .right_block-link {
-            max-width: 109px;
-            max-height: 29px;
             margin-right: 546px;
-            margin-bottom: 3px;
             font-family: $font-outfit;
             font-size: 22px;
             line-height: 35.2px;
@@ -1528,14 +1471,6 @@ header {
             color: $white-color;
         }
     }
-}
-.recent_blogs-rectangle {
-    height: 1px;
-    background-color: #4E555F;
-    max-width: 1360px;
-    margin: auto;
-    margin-top: 100px;
-    
 }
 
 
@@ -1562,53 +1497,46 @@ header {
        flex-direction: column;
        margin-bottom: 100px;
        .case_top-img {
-        max-width: 440px;
-        max-height: 367px;
+        width: 440px;
+        height: 367px;
+        img {
+            width: 100%;
+            height: 100%;
+        }
        }
        .case_body {
-        max-width: 440px;
-        max-height: 355px;
+        width: 440px;
+        height: 355px;
         margin-top: 24px;
         color: $white-color;
         display: flex;
         flex-direction: column;
             .case_body-info {
-                max-width: 440px;
-                max-height: 56px;
+                width: 100%;
+                height: 56px;
                 display: flex;
                 justify-content: space-between;
-                padding-bottom: 22px;
+                align-items: flex-start;
                 font-family: $font-outfit;
                 font-size: 21px;
                 line-height: 33.6px;
                 color: $gold_color;
-                .case_body-info-date {
-                    margin-right: 16px;
-                }
+                border-bottom: 1px solid #4E555F;
             }
         }
-        .cases_body-rectangle {
-            height: 1px;
-            background-color: #4E555F;
-        }
         .case_body-header {
-            max-width: 379px;
-            max-height: 78px;
+            width: 397px;
+            height: 78px;
             margin: 25px 43px 22px 0px;
-            font-family: $font-cormoran;
-            font-size: 30px;
-            line-height: 39px;
-            color: $white-color;
         }
         .case_body-description {
-            max-width: 421px;
-            max-height: 96px;
-            margin-right: 19px;
+            width: 100%;
+            height: 96px;
             margin-bottom: 20px;
         }
         .case_body-link {
-            max-width: 109px;
-            max-height: 29px;
+            width: 109px;
+            height: 29px;
             font-family: $font-outfit;
             font-size: 22px;
             line-height: 35.2px;
@@ -1630,9 +1558,13 @@ header {
 
 
 .bottom_image {
-    max-width: 1440px;
-    max-height: 248px;
-    margin: auto;
+    width: 100%;
+    overflow: hidden; 
+    img {
+        width: 100%;
+        height: auto; 
+        display: block;
+    }
 }
 
 
@@ -1645,7 +1577,6 @@ header {
 }
 .footer_container {
     max-width: 1400px;
-    max-height: 748px;
     display: flex;
     flex-direction: column;
     margin: 130px 20px 70px;
@@ -1655,21 +1586,13 @@ header {
     max-width: 1360px;
     margin-bottom: 95px;
 }
-.footer_copyright-rectangle {
-    max-width: 1360px;
-    height: 1px;
-    background-color: #3B434E;
-}
-.footer_copyright-rectangle:last-child {
-    margin-bottom: 38px;
-}
 .footer_container-copyright {
-    max-width: 1360px;
-    max-height: 88px;
     display: flex;
     justify-content: space-between;
     padding-top: 17px;
     padding-bottom: 28px;
+    border-top: 1px solid #3B434E;
+    border-bottom: 1px solid #3B434E;
 }
 .footer_container-copyright-left {
     display: flex;
@@ -1702,7 +1625,6 @@ header {
         font-size: 20px;
         line-height: 32px;
         color: $gold_color;
-        max-height: 32px;
     }
     .social_buttons {
         max-width: 174px;
@@ -1723,23 +1645,13 @@ header {
 .footer-nav-item {
     display: flex;
     flex-direction: column;
-    max-height: 371px;
     max-width: 369px;
     .footer-nav-item-header {
-        max-height: 81px;
         margin-bottom: 30px;
-        font-family: $font-cormoran;
-        font-size: 30px;
-        line-height: 39px;
-        color: $white-color;
-        .footer-nav_rectangle {
-            height: 1px;
-            background-color: #3B434E;
-        }
-    }
-    .footer-nav-item-header > h5 {
-        margin-top: 21px;
-        margin-bottom: 21px;
+        border-top: 1px solid #3B434E;
+        border-bottom: 1px solid #3B434E;
+        padding-top: 21px;
+        padding-bottom: 21px;
     }
     .footer-nav-body {
         display: flex;
